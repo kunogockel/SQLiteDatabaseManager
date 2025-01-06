@@ -1,4 +1,14 @@
+
 # SQLiteDatabaseManager
+
+## Änderungen
+
+2025-01-06
+
+* Diverse Projekteigneschaften bereinigt
+
+---
+
 **SQLite DatabaseManager** is a SQLite Database IDE. A free graphical user interface, that allows to perform several database tasks, its light and great for beginners.
 
 ![Main Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/mainScreen.PNG)

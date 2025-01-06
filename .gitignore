@@ -1,0 +1,15 @@
+# Build results
+**/bin/
+**/obj/
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+**/.vs/
+publish/
+
+# NuGet packages
+packages/
+
