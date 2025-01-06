@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLite_DataBaseManager", "SQLite_DataBaseManager\SQLite_DataBaseManager.csproj", "{824B825D-CE86-4BE8-BC0C-71C2F96E8148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{65BCC03C-65BD-4B3A-8237-2A88AADF5FF0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,11 @@ Global
 		{824B825D-CE86-4BE8-BC0C-71C2F96E8148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{824B825D-CE86-4BE8-BC0C-71C2F96E8148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{824B825D-CE86-4BE8-BC0C-71C2F96E8148}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65BCC03C-65BD-4B3A-8237-2A88AADF5FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65BCC03C-65BD-4B3A-8237-2A88AADF5FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65BCC03C-65BD-4B3A-8237-2A88AADF5FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65BCC03C-65BD-4B3A-8237-2A88AADF5FF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4E35F71-37AD-4A03-BACC-2F495EDE1EF2}
 	EndGlobalSection
 EndGlobal

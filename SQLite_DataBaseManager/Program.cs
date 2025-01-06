@@ -16,7 +16,7 @@ namespace SQLite_DataBaseManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 mainForm = new Form1();
+            MainDlg mainForm = new MainDlg();
             Application.Run(mainForm);
             
         }

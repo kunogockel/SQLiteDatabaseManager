@@ -6,12 +6,19 @@
 2025-01-06
 
 * Diverse Projekteigneschaften bereinigt
+* Pfade in README bereinigt
+* Hauptfenster wird nicht mehr maximiert geöffnet
+* Beschränkung auf Dateien, die mit "sqlite" enden aufgehoben
+* Bugfixing
+* Für exportierte Samsung-TV-Kanalliste werden Texte umcodiert und
+  damit richtig angezeigt
+
 
 ---
 
 **SQLite DatabaseManager** is a SQLite Database IDE. A free graphical user interface, that allows to perform several database tasks, its light and great for beginners.
 
-![Main Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/mainScreen.PNG)
+![Main Screenshot](GithubImages/mainScreen.PNG)
 
 ## Features
 
@@ -36,38 +43,38 @@
 
 # Creating SQLite Connection 
 
-![Create Connection Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/createConnection.PNG)
+![Create Connection Screenshot](GithubImages/createConnection.PNG)
 
 Feature to add to your connections any existing SQLite database file you have. Currently only works with (.sqlite) extension files
 
 # Creating SQLite Database Files
 
-![Create Connection Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/createDatabase.PNG)
+![Create Connection Screenshot](GithubImages/createDatabase.PNG)
 
 Feature to create a SQLite database file, you have to select the location of the file and input the name of the database.
 
 # Creating Tables
 
-![Create Connection Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/createTable.PNG)
+![Create Connection Screenshot](GithubImages/createTable.PNG)
 
 Module to create a table in the current selected database, set a table Name and add columns.
 This form has one tab to see the generated DLL, which you can analyze before creating the table.
 
 # Creating Indexes
 
-![Create Connection Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/createIndex.PNG)
+![Create Connection Screenshot](GithubImages/createIndex.PNG)
 
 The create trigger module allows the developer to add indexes to the selected table. To access this module expand the desired table, right click on the option Indexes and 'Create index'
 
 # Creating Triggers
 
-![Create Connection Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/createTrigger.PNG)
+![Create Connection Screenshot](GithubImages/createTrigger.PNG)
 
 The create trigger module allows the developer to add triggers to the selected table. To access this module expand the desired table, right click on the option Triggers and 'Create trigger'
 
 # Creating Views
 
-![Create Connection Screenshot](https://github.com/Vicra/SQLiteDatabaseManager/blob/master/GithubImages/createView.PNG)
+![Create Connection Screenshot](GithubImages/createView.PNG)
 
 Create views module allows you to create a view on the SQLite database, to create a view right click on the Views option and select the 'Create View' item.
 

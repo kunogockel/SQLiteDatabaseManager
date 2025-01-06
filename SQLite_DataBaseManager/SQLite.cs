@@ -15,7 +15,7 @@ namespace SQLite_DataBaseManager
         }
         public void ConnectDatabase(string name)
         {
-            dbConnection = new SQLiteConnection("Data Source=" + name + ";Version=3;");
+            dbConnection = new SQLiteConnection("Data Source=" + name + ";Version=3");
             dbConnection.Open();
         }
 

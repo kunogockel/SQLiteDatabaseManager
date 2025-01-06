@@ -1,4 +1,5 @@
-﻿using System;
+﻿// 2025-01-06 KG Beschraenkung auf Dateien, die mit "sqlite" enden, aufgehoben
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace SQLite_DataBaseManager
             try
             {
                 string filePathName = txtFilePathName.Text;
-                if (isValidPath(filePathName))
+                if (File.Exists(filePathName))
                 {
                     _sqliteManager.createNewConnection(filePathName);
                     MessageBox.Show("Connection performed successfully.");
@@ -34,18 +35,13 @@ namespace SQLite_DataBaseManager
                 }
                 else
                 {
-                    MessageBox.Show("Invalid file selected. Extension must be .sqlite");
+                    MessageBox.Show("File does not exist.");
                 }
             }
             catch (Exception ex)
             {
                 showErrorMessage(ex);
             }
-        }
-
-        private bool isValidPath(string filePathName)
-        {
-            return File.Exists(filePathName) && filePathName.EndsWith(".sqlite");
         }
 
         private void showErrorMessage(Exception ex)

@@ -1,12 +1,15 @@
-﻿using System;
+﻿// 2025-01-06 KG Hauptfenster wird nicht mehr maximiert geoeffnet
+//               Bugfix
+using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Text;
 
 namespace SQLite_DataBaseManager
 {
-    public partial class Form1 : Form
+    public partial class MainDlg : Form
     {
         string lastSelect = "";
         SQLiteManager _sqliteManager = new SQLiteManager();
@@ -16,7 +19,7 @@ namespace SQLite_DataBaseManager
         CreateIndexForm indexform;
         CreateTriggerForm triggerForm;
         FileConnections fileConnections;
-        public Form1()
+        public MainDlg()
         {
             this.Refresh();
             fileConnections = new FileConnections();
@@ -280,7 +283,44 @@ namespace SQLite_DataBaseManager
                 dataGridView1.Refresh();
                 string tableName = "";
                 tableName += DatabaseTree.SelectedNode.Text;
-                this.dataGridView1.DataSource = _sqliteManager.ExecuteWithResults("SELECT * FROM " + tableName);
+                // Daten in Tabelle lesen
+                DataTable dt = _sqliteManager.ExecuteWithResults("SELECT * FROM " + tableName);
+                // In der exportierten Kanalliste fuer Samsung-TVs sind die Texte als UTF-16LE in der
+                // Datenbank gespeichert. Die Texte selbst sind aber in UTF-16BE codiert und erscheinen
+                // beim anzeigen "chinesisch". 
+                // fuer Tabelle "SAT" das Feld satName decodieren
+                if (tableName == "SAT")
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt.Rows[i]["satName"] = convertLEToBE(dt.Rows[i]["satName"]);
+                    }
+                }
+                // fuer Tabelle "SRV" das Feld srvName decodieren
+                if (tableName == "SRV")
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt.Rows[i]["srvName"] = convertLEToBE(dt.Rows[i]["srvName"]);
+                    }
+                }
+                // fuer Tabelle "PROV" das Feld "provName" decodieren
+                if (tableName == "PROV")
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt.Rows[i]["provName"] = convertLEToBE(dt.Rows[i]["provName"]);
+                    }
+                }
+                // fuer Tabelle "SRV_IP" das Feld "jsonMeta" decodieren
+                if (tableName == "SRV_IP")
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt.Rows[i]["jsonMeta"] = convertLEToBE(dt.Rows[i]["jsonMeta"]);
+                    }
+                }
+                this.dataGridView1.DataSource = dt;
                 tabControl1.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -509,6 +549,10 @@ namespace SQLite_DataBaseManager
 
         private void DatabaseTree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            // 2025-01-06 KG Bugfix: 'SelectedNode' kann null sein, deshalb setzen des angeklickten
+            // Knotens als 'SelectedNode'
+            DatabaseTree.SelectedNode = e.Node;
+
             if (DatabaseTree.SelectedNode.Parent != null)
             {
                 if (DatabaseTree.SelectedNode.Parent.Text == "Tables")
@@ -527,8 +571,38 @@ namespace SQLite_DataBaseManager
                 {
                     this.DDL_TextBox.Text = _sqliteManager.GetDDL(DatabaseTree.SelectedNode.Text, "trigger");
                 }
-                tabControl1.SelectedIndex = 1;
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region convertLEToBE()
+        string convertLEToBE(object obj)
+        {
+            // leere Felder brauchen nicht umgewandelt zu werden
+            if (obj is null)
+                return null;
+            byte[] nameBytes = new byte[1000];
+            int nameLen = 0;
+            if (obj is byte[] buffer) 
+            {
+                // SQLite lieferte ein BLOB-Wert
+                nameBytes = buffer;
+                nameLen = buffer.Length;
+            }
+            else if (obj is string str)
+            {
+                // SQLite lieferte einen UTF-16LE-string, der "chinesisch" erscheint
+                nameBytes = Encoding.Unicode.GetBytes(str);
+                nameLen = nameBytes.Length;
+            }
+            // LE in BE umsetzen
+            return Encoding.BigEndianUnicode.GetString(nameBytes, 0, nameLen);
+        }
+        #endregion
+
     }
 }

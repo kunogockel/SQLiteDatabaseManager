@@ -1,6 +1,6 @@
 ﻿namespace SQLite_DataBaseManager
 {
-    partial class Form1
+    partial class MainDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDlg));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.DatabaseTree = new System.Windows.Forms.TreeView();
@@ -91,6 +91,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.TriggerMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteTriggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -223,7 +224,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.statusTextBox);
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer2.Size = new System.Drawing.Size(570, 462);
-            this.splitContainer2.SplitterDistance = 301;
+            this.splitContainer2.SplitterDistance = 388;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -242,8 +243,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer3.Size = new System.Drawing.Size(570, 301);
-            this.splitContainer3.SplitterDistance = 123;
+            this.splitContainer3.Size = new System.Drawing.Size(570, 388);
+            this.splitContainer3.SplitterDistance = 158;
             this.splitContainer3.SplitterWidth = 3;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -262,8 +263,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer4.Size = new System.Drawing.Size(570, 123);
-            this.splitContainer4.SplitterDistance = 25;
+            this.splitContainer4.Size = new System.Drawing.Size(570, 158);
+            this.splitContainer4.SplitterDistance = 32;
             this.splitContainer4.SplitterWidth = 3;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -277,7 +278,7 @@
             this.SaveFileAction});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(570, 25);
+            this.toolStrip3.Size = new System.Drawing.Size(570, 32);
             this.toolStrip3.TabIndex = 2;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -287,7 +288,7 @@
             this.RunAction.Image = ((System.Drawing.Image)(resources.GetObject("RunAction.Image")));
             this.RunAction.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RunAction.Name = "RunAction";
-            this.RunAction.Size = new System.Drawing.Size(24, 22);
+            this.RunAction.Size = new System.Drawing.Size(24, 29);
             this.RunAction.Text = "Execute Query (F5)";
             this.RunAction.Click += new System.EventHandler(this.RunAction_Click);
             // 
@@ -297,7 +298,7 @@
             this.OpenFileAction.Image = ((System.Drawing.Image)(resources.GetObject("OpenFileAction.Image")));
             this.OpenFileAction.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenFileAction.Name = "OpenFileAction";
-            this.OpenFileAction.Size = new System.Drawing.Size(24, 22);
+            this.OpenFileAction.Size = new System.Drawing.Size(24, 29);
             this.OpenFileAction.Tag = "   ";
             this.OpenFileAction.Text = "Open File (Ctrl + O)";
             this.OpenFileAction.Click += new System.EventHandler(this.OpenFileAction_Click);
@@ -308,7 +309,7 @@
             this.SaveFileAction.Image = ((System.Drawing.Image)(resources.GetObject("SaveFileAction.Image")));
             this.SaveFileAction.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveFileAction.Name = "SaveFileAction";
-            this.SaveFileAction.Size = new System.Drawing.Size(24, 22);
+            this.SaveFileAction.Size = new System.Drawing.Size(24, 29);
             this.SaveFileAction.Text = "Save File (Ctrl + S)";
             this.SaveFileAction.Click += new System.EventHandler(this.SaveFileAction_Click);
             // 
@@ -321,7 +322,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(570, 95);
+            this.tabControl2.Size = new System.Drawing.Size(570, 123);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage3
@@ -331,7 +332,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(562, 69);
+            this.tabPage3.Size = new System.Drawing.Size(562, 97);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Query";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -342,7 +343,7 @@
             this.QueryTextBox.Location = new System.Drawing.Point(2, 2);
             this.QueryTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.QueryTextBox.Name = "QueryTextBox";
-            this.QueryTextBox.Size = new System.Drawing.Size(558, 65);
+            this.QueryTextBox.Size = new System.Drawing.Size(558, 93);
             this.QueryTextBox.TabIndex = 0;
             this.QueryTextBox.Text = "";
             this.QueryTextBox.TextChanged += new System.EventHandler(this.QueryTextBox_TextChanged);
@@ -355,7 +356,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(562, 69);
+            this.tabPage4.Size = new System.Drawing.Size(562, 97);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "History";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -375,7 +376,7 @@
             this.HistoryGrid.Name = "HistoryGrid";
             this.HistoryGrid.ReadOnly = true;
             this.HistoryGrid.RowTemplate.Height = 24;
-            this.HistoryGrid.Size = new System.Drawing.Size(558, 65);
+            this.HistoryGrid.Size = new System.Drawing.Size(558, 93);
             this.HistoryGrid.TabIndex = 0;
             // 
             // Column2
@@ -407,7 +408,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(570, 175);
+            this.tabControl1.Size = new System.Drawing.Size(570, 227);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -417,7 +418,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(562, 149);
+            this.tabPage1.Size = new System.Drawing.Size(562, 201);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Grid View";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -437,8 +438,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer5.Size = new System.Drawing.Size(558, 145);
-            this.splitContainer5.SplitterDistance = 25;
+            this.splitContainer5.Size = new System.Drawing.Size(558, 197);
+            this.splitContainer5.SplitterDistance = 33;
             this.splitContainer5.SplitterWidth = 3;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -450,7 +451,7 @@
             this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(558, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(558, 33);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -460,7 +461,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 30);
             this.toolStripButton1.Text = "Refresh";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -474,7 +475,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 117);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 161);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage2
@@ -507,7 +508,7 @@
             this.statusTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.ReadOnly = true;
-            this.statusTextBox.Size = new System.Drawing.Size(570, 158);
+            this.statusTextBox.Size = new System.Drawing.Size(570, 71);
             this.statusTextBox.TabIndex = 2;
             this.statusTextBox.Text = "";
             // 
@@ -578,12 +579,12 @@
             this.TablesMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createTableToolStripMenuItem});
             this.TablesMenuStrip.Name = "TablesMenuStrip";
-            this.TablesMenuStrip.Size = new System.Drawing.Size(140, 26);
+            this.TablesMenuStrip.Size = new System.Drawing.Size(139, 26);
             // 
             // createTableToolStripMenuItem
             // 
             this.createTableToolStripMenuItem.Name = "createTableToolStripMenuItem";
-            this.createTableToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.createTableToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.createTableToolStripMenuItem.Text = "Create Table";
             this.createTableToolStripMenuItem.Click += new System.EventHandler(this.createTableToolStripMenuItem_Click);
             // 
@@ -591,12 +592,13 @@
             // 
             this.TableMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.TableMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DeleteTable,
             this.toolStripSeparator7,
             this.ViewTableData,
-            this.insertDataToolStripMenuItem});
+            this.insertDataToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.DeleteTable});
             this.TableMenuStrip.Name = "TableMenuStrip";
-            this.TableMenuStrip.Size = new System.Drawing.Size(137, 76);
+            this.TableMenuStrip.Size = new System.Drawing.Size(181, 120);
             // 
             // DeleteTable
             // 
@@ -676,12 +678,12 @@
             this.IndexesMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createIndexToolStripMenuItem1});
             this.IndexesMenuStrip.Name = "IndexMenuStrip";
-            this.IndexesMenuStrip.Size = new System.Drawing.Size(140, 26);
+            this.IndexesMenuStrip.Size = new System.Drawing.Size(141, 26);
             // 
             // createIndexToolStripMenuItem1
             // 
             this.createIndexToolStripMenuItem1.Name = "createIndexToolStripMenuItem1";
-            this.createIndexToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.createIndexToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.createIndexToolStripMenuItem1.Text = "Create Index";
             this.createIndexToolStripMenuItem1.Click += new System.EventHandler(this.createIndexToolStripMenuItem1_Click);
             // 
@@ -691,12 +693,12 @@
             this.TriggersMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createTriggerToolStripMenuItem1});
             this.TriggersMenuStrip.Name = "TriggerMenuStrip";
-            this.TriggersMenuStrip.Size = new System.Drawing.Size(149, 26);
+            this.TriggersMenuStrip.Size = new System.Drawing.Size(148, 26);
             // 
             // createTriggerToolStripMenuItem1
             // 
             this.createTriggerToolStripMenuItem1.Name = "createTriggerToolStripMenuItem1";
-            this.createTriggerToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.createTriggerToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.createTriggerToolStripMenuItem1.Text = "Create Trigger";
             this.createTriggerToolStripMenuItem1.Click += new System.EventHandler(this.createTriggerToolStripMenuItem1_Click);
             // 
@@ -706,12 +708,12 @@
             this.IndexMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deToolStripMenuItem});
             this.IndexMenuStrip.Name = "IndexMenuStrip";
-            this.IndexMenuStrip.Size = new System.Drawing.Size(139, 26);
+            this.IndexMenuStrip.Size = new System.Drawing.Size(140, 26);
             // 
             // deToolStripMenuItem
             // 
             this.deToolStripMenuItem.Name = "deToolStripMenuItem";
-            this.deToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.deToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.deToolStripMenuItem.Text = "Delete Index";
             this.deToolStripMenuItem.Click += new System.EventHandler(this.deToolStripMenuItem_Click);
             // 
@@ -740,16 +742,23 @@
             this.TriggerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteTriggerToolStripMenuItem});
             this.TriggerMenuStrip.Name = "TriggerMenuStrip";
-            this.TriggerMenuStrip.Size = new System.Drawing.Size(148, 26);
+            this.TriggerMenuStrip.Size = new System.Drawing.Size(147, 26);
             // 
             // deleteTriggerToolStripMenuItem
             // 
             this.deleteTriggerToolStripMenuItem.Name = "deleteTriggerToolStripMenuItem";
-            this.deleteTriggerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.deleteTriggerToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.deleteTriggerToolStripMenuItem.Text = "Delete Trigger";
             this.deleteTriggerToolStripMenuItem.Click += new System.EventHandler(this.deleteTriggerToolStripMenuItem_Click);
             // 
-            // Form1
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "---";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // MainDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -758,9 +767,8 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "MainDlg";
             this.Text = "SQLite Database Manager";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -874,6 +882,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteTriggerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createConnectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeConnectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
 
