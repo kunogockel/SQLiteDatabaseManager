@@ -598,7 +598,7 @@
             this.toolStripMenuItem2,
             this.DeleteTable});
             this.TableMenuStrip.Name = "TableMenuStrip";
-            this.TableMenuStrip.Size = new System.Drawing.Size(181, 120);
+            this.TableMenuStrip.Size = new System.Drawing.Size(137, 98);
             // 
             // DeleteTable
             // 
@@ -769,6 +769,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainDlg";
             this.Text = "SQLite Database Manager";
+            this.Shown += new System.EventHandler(this.MainDlg_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

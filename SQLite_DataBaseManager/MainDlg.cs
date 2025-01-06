@@ -19,32 +19,32 @@ namespace SQLite_DataBaseManager
         CreateIndexForm indexform;
         CreateTriggerForm triggerForm;
         FileConnections fileConnections;
+
         public MainDlg()
         {
-            this.Refresh();
-            fileConnections = new FileConnections();
             InitializeComponent();
+        }
+
+        private void MainDlg_Shown(object sender, EventArgs e)
+        {
+            // gespeicherte Datenbankdateien einlesen
+            fileConnections = new FileConnections();
+            // Baumansicht der Datenbanken erstellen
             InitializeDatabases();
         }
 
         private void InitializeDatabases()
         {
             DatabaseTree.Nodes.Clear();
-            DatabaseTree.Nodes.Add("Databases", "Databases","servers.png", "servers.png");
+            DatabaseTree.Nodes.Add("Databases", "Databases");
             DatabaseTree.Nodes["Databases"].ContextMenuStrip = DatabasesMenuStrip;
 
             var connections = fileConnections.getConnections();
             foreach (DatabaseConnection connection in connections)
             {
-                DatabaseTree.Nodes[0].Nodes.Add(connection.Path,
-                    connection.Name + "(" + connection.Path + ")",
-                    "db.png",
-                    "db.png");
-            }
-            int n = DatabaseTree.Nodes[0].Nodes.Count;
-            for (int i = 0; i < n; i++)
-            {
-                DatabaseTree.Nodes[0].Nodes[i].ContextMenuStrip = DatabaseMenuStrip;
+                TreeNode node = new TreeNode(connection.Name + "(" + connection.Path + ")");
+                node.ContextMenuStrip = DatabaseMenuStrip;
+                DatabaseTree.Nodes[0].Nodes.Add(node);
             }
             DatabaseTree.Nodes[0].ExpandAll();
         }

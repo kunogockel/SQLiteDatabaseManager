@@ -138,6 +138,7 @@
     <Compile Include="CreateViewForm.Designer.cs">
       <DependentUpon>CreateViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="FileConnections.cs" />
     <Compile Include="MainDlg.cs">
       <SubType>Form</SubType>

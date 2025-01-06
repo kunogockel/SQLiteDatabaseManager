@@ -2,6 +2,7 @@
 using System.Data.SQLite;
 using System.Data;
 using System.IO;
+using System.Xml.Linq;
 
 namespace SQLite_DataBaseManager
 {
@@ -45,17 +46,12 @@ namespace SQLite_DataBaseManager
             }
         }
 
-        public void CreateDatabase(string name, string path, bool saveConnection)
+        public void CreateDatabase(string filename)
         {
-            SQLiteConnection.CreateFile(path + "\\" + name);
-            var createDatabaseConnection = new SQLiteConnection("Data Source=" + path + "\\" + name + ";Version=3;");
+            SQLiteConnection.CreateFile(filename);
+            var createDatabaseConnection = new SQLiteConnection("Data Source=" + filename + ";Version=3;");
             createDatabaseConnection.Open();
             createDatabaseConnection.Close();
-
-            if (saveConnection)
-            {
-                fileConnections.addConnection(name, path);
-            }
         }
         public void DeleteDatabase(string name)
         {

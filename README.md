@@ -1,3 +1,5 @@
+Nur als Referenz.
+Änderungen machen keinen Sinn. Zu verwurschtelt und zu viele Konzeptfehler. Besser neu schreiben.
 
 # SQLiteDatabaseManager
 
